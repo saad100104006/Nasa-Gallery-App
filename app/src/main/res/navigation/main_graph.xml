@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/pictureListFragment">
+
+    <fragment
+        android:id="@+id/pictureListFragment"
+        android:name="com.nasa.gallery.ui.list.PictureListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_picture_list" >
+        <action
+            android:id="@+id/action_pictureListFragment_to_pictureDetailsFragment"
+            app:destination="@id/pictureDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+        <action
+            android:id="@+id/action_pictureListFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/pictureDetailsFragment"
+        android:name="com.nasa.gallery.ui.details.PictureDetailsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_picture_details" >
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="origin"
+            app:argType="com.nasa.gallery.util.Origin" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.nasa.gallery.ui.bookmark.NasaBookmarkFragment"
+        android:label="@string/text_bookmarks"
+        tools:layout="@layout/fragment_bookmark" >
+        <action
+            android:id="@+id/action_bookmarkFragment_to_pictureDetailsFragment"
+            app:destination="@id/pictureDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>

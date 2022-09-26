@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/detail_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/desc_image"
+            android:minHeight="250dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/MainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/abeezee"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/detail_photo"
+            app:layout_constraintStart_toStartOf="@id/detail_photo"
+            app:layout_constraintTop_toBottomOf="@id/detail_photo"
+            tools:text="The judge of the jungle" />
+
+
+        <TextView
+            android:id="@+id/date_text"
+            style="@style/MainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawableStart="@drawable/ic_date"
+            android:drawablePadding="5dp"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintEnd_toEndOf="@id/title_text"
+            app:layout_constraintStart_toStartOf="@id/title_text"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
+            tools:text="2011:12:9" />
+
+
+        <TextView
+            android:id="@+id/explanation_text"
+            style="@style/MainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/copyright_symbol"
+            app:layout_constraintEnd_toEndOf="@id/date_text"
+            app:layout_constraintStart_toStartOf="@id/date_text"
+            app:layout_constraintTop_toBottomOf="@id/date_text"
+            tools:text="Phasellus gravida semper nisi. Vivamus elementum semper nisi. Cras non dolor." />
+
+        <TextView
+            android:id="@+id/copyright_symbol"
+            style="@style/MainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_copyright"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/explanation_text"
+            app:layout_constraintTop_toBottomOf="@id/explanation_text" />
+
+        <TextView
+            android:id="@+id/copyright_text"
+            style="@style/MainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toBottomOf="@+id/copyright_symbol"
+            app:layout_constraintEnd_toEndOf="@+id/explanation_text"
+            app:layout_constraintStart_toEndOf="@+id/copyright_symbol"
+            app:layout_constraintTop_toTopOf="@+id/copyright_symbol"
+            tools:text="Leonardo Julio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
